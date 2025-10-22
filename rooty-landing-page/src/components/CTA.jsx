@@ -47,7 +47,7 @@ export default function CTA() {
     <section id="cta" className="py-20">
       <div className="mx-auto max-w-2xl px-4 text-center">
         {/* Enlève FadeIn si tu ne veux pas d'animation / si tu n'as pas le composant */}
-        <FadeIn mode="onScroll" duration={0.3}>
+        <FadeIn mode="onScroll" repeat duration={0.5}>
           <h2 className="text-3xl sm:text-4xl font-bold">Get early access</h2>
         </FadeIn>
 

@@ -3,10 +3,8 @@ import Button from "./ui/Button";
 
 export default function Hero() {
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{ backgroundImage: "linear-gradient(to bottom, rgba(72,204,189,0.08), white)" }}
-    >
+    <section className="relative overflow-hidden bg-white">
+      
       <div className="mx-auto max-w-6xl px-4 py-24 text-center">
         
 
@@ -29,7 +27,7 @@ export default function Hero() {
 
         <FadeIn mode="onMount" delay={0.3}>
           <div className="mt-12 mx-auto max-w-4xl rounded-2xl border bg-white p-4 shadow-sm">
-            <div className="aspect-[16/9] w-full rounded-xl bg-gray-100 grid place-items-center">
+          <div className="aspect-[16/9] w-full rounded-xl bg-white grid place-items-center">
               <span className="text-gray-500">App preview (add screenshot/video later)</span>
             </div>
           </div>

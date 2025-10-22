@@ -13,7 +13,7 @@ export default function Features() {
   return (
     <section id="features" className="py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <FadeIn mode="onScroll" duration={0.3}>
+        <FadeIn mode="onScroll" repeat duration={0.5}>
           <h2 className="text-3xl sm:text-4xl font-bold text-center">Why riders choose Rooty</h2>
         </FadeIn>
 

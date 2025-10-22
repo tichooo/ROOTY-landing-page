@@ -3,9 +3,9 @@ import Button from "./ui/Button";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
+    <section id="pricing" className="py-20 bg-white">
       <div className="mx-auto max-w-6xl px-4">
-        <FadeIn mode="onScroll" duration={0.3}>
+        <FadeIn mode="onScroll" duration={0.5}>
           <h2 className="text-3xl sm:text-4xl font-bold text-center">
             Lovable Plan — Free forever
           </h2>
