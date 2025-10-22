@@ -1,20 +1,24 @@
 import FadeIn from "./motion/FadeIn";
+import { useTranslation } from "react-i18next";
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
+
   const steps = [
-    ["Pick destination", "Tell Rooty where you’re going."],
-    ["Choose vibe", "Safest, flattest, or fastest route for your ride."],
-    ["Ride with confidence", "Turn-by-turn guidance built for micromobility."],
+    [t("how_step1_title"), t("how_step1_desc")],
+    [t("how_step2_title"), t("how_step2_desc")],
+    [t("how_step3_title"), t("how_step3_desc")],
   ];
 
   return (
-  <section id="how" className="py-20 bg-white">
+    <section id="how" className="py-20 bg-white">
       <div className="mx-auto max-w-6xl px-4">
         {/* Titre */}
         <FadeIn mode="onScroll" duration={0.5}>
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">How it works</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">
+            {t("how_title")}
+          </h2>
         </FadeIn>
-
 
         {/* Étapes */}
         <div className="mt-10 grid gap-6 sm:grid-cols-3">

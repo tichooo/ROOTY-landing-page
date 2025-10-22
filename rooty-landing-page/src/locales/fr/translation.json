@@ -1,0 +1,93 @@
+{
+  "nav_features": "Fonctionnalités",
+  "nav_pricing": "Tarifs",
+  "nav_how": "Comment ça marche",
+  "nav_early": "Accès anticipé",
+
+  
+  "hero_title": "Des trajets plus sûrs et plus fluides pour vélos et trottinettes",
+  "hero_subtitle": "Rooty trouve des itinéraires adaptés à la micromobilité, évite les routes dangereuses et affiche les pistes cyclables, parkings et bornes de recharge.",
+  "hero_cta": "Accès anticipé",
+  "hero_features": "Voir les fonctionnalités",
+  "hero_preview": "Aperçu de l'application (capture/vidéo à venir)",
+
+
+  "cta_button": "Rejoindre la liste d’attente",
+  "see_features": "Voir les fonctionnalités",
+
+  
+  "features_title": "Pourquoi les riders choisissent Rooty",
+  "features_1_title": "Itinéraires sur pistes cyclables",
+  "features_1_desc": "Privilégie les pistes protégées et les voies partagées, évite les routes dangereuses.",
+  "features_2_title": "Signaux de sécurité",
+  "features_2_desc": "Analyse du trafic, de la pente, du type de route et des signalements communautaires.",
+  "features_3_title": "Parking & recharge",
+  "features_3_desc": "Trouve des emplacements légaux pour garer ou recharger ton scooter ou ton vélo électrique.",
+  "features_4_title": "Météo & vent",
+  "features_4_desc": "Ajuste les trajets selon le vent ou la pluie pour un confort optimal.",
+  "features_5_title": "Compatible avec les opérateurs",
+  "features_5_desc": "Fonctionne avec Lime, Tier, Bird, Dott ou ton propre vélo.",
+  "features_6_title": "Respect de la vie privée",
+  "features_6_desc": "Aucune publicité. Données minimales. Partage uniquement sur consentement.",
+
+
+  
+  "pricing_title": "Offre Lovable — Gratuite pour toujours",
+  "pricing_subtitle": "Teste Rooty avec les fonctionnalités essentielles appréciées par les riders. Aucune carte requise.",
+
+  "pricing_lovable_name": "Lovable",
+  "pricing_free_badge": "Gratuit",
+  "pricing_lovable_desc": "L’essentiel pour tomber amoureux de Rooty.",
+  "pricing_free_label": "Gratuit",
+  "pricing_free_forever": "pour toujours",
+
+  "pricing_feat_lane": "Itinéraires adaptés vélos/trottinettes",
+  "pricing_feat_safer": "Options de trajets plus sûrs",
+  "pricing_feat_parking": "Parkings & bornes de recharge",
+  "pricing_feat_privacy": "Pas de pubs, confidentialité d’abord",
+
+  "pricing_cta_start_free": "Commencer gratuitement",
+
+  "pricing_pro_name": "Pro",
+  "pricing_coming_soon": "bientôt",
+  "pricing_pro_desc": "Pour les trajets quotidiens avec plus de contrôle.",
+  "pricing_per_month": "/mois",
+  "pricing_includes_lovable": "Tout Lovable inclus",
+  "pricing_feat_weather": "Itinéraires météo/vent",
+  "pricing_feat_elevation": "Préférences de dénivelé",
+  "pricing_feat_favorites": "Favoris & quartiers",
+
+  "pricing_cta_join_waitlist": "Rejoindre la liste d’attente",
+
+  "pricing_teams_name": "Villes / Équipes",
+  "pricing_teams_desc": "Pour les partenaires et programmes de mobilité.",
+  "pricing_custom_label": "Sur mesure",
+  "pricing_feat_dashboards": "Tableaux de bord de couverture",
+  "pricing_feat_api": "API & intégrations",
+  "pricing_feat_priority": "Déploiement prioritaire",
+  "pricing_cta_contact": "Nous contacter",
+
+
+
+  "how_title": "Comment ça marche",
+  "how_step1_title": "Choisir la destination",
+  "how_step1_desc": "Dis à Rooty où tu vas.",
+  "how_step2_title": "Choisir le style",
+  "how_step2_desc": "Plus sûr, plus plat ou plus rapide.",
+  "how_step3_title": "Rouler serein",
+  "how_step3_desc": "Guidage pensé pour la micromobilité.",
+
+  "cta_title": "Accès anticipé",
+  "cta_subtitle": "Inscris-toi pour tester Rooty en premier dans ta ville.",
+  "cta_placeholder_email": "votre@email.com",
+  "cta_submit": "S’inscrire",
+  "cta_submitting": "Envoi…",
+  "cta_success": "Vous êtes inscrit ! 🎉",
+  "cta_invalid_email": "Veuillez saisir une adresse e-mail valide.",
+  "cta_error": "Un problème est survenu. Réessayez.",
+  "cta_policy": "Pas de spam. Désabonnement à tout moment.",
+
+  "footer_privacy": "Confidentialité",
+  "footer_terms": "Mentions légales",
+  "footer_contact": "Contact"
+}

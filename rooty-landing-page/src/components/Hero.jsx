@@ -1,10 +1,11 @@
 import FadeIn from "./motion/FadeIn";
 import Button from "./ui/Button";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
-      
+
       <div className="mx-auto max-w-6xl px-4 py-24 text-center">
         
 

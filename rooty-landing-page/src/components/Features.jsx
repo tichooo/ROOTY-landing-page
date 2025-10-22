@@ -1,4 +1,5 @@
 import FadeIn from "./motion/FadeIn";
+import { useTranslation } from "react-i18next";
 
 const items = [
   { title: "Bike-lane routing", desc: "Prefer protected lanes and shared paths; avoid scary roads." },

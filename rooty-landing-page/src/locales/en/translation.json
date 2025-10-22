@@ -1,0 +1,94 @@
+{
+  "nav_features": "Features",
+  "nav_pricing": "Pricing",
+  "nav_how": "How it works",
+  "nav_early": "Early access",
+
+  
+  "hero_title": "Safer, smoother routes for bikes & scooters",
+  "hero_subtitle": "Rooty finds micromobility-friendly paths, avoids dangerous roads, and shows bike lanes, parking and charging spots.",
+  "hero_cta": "Get early access",
+  "hero_features": "See features",
+  "hero_preview": "App preview (add screenshot/video later)",
+
+
+  "cta_button": "Join waitlist",
+  "see_features": "See features",
+
+  
+  "features_title": "Why riders choose Rooty",
+  "features_1_title": "Bike-lane routing",
+  "features_1_desc": "Prefer protected lanes and shared paths; avoid scary roads.",
+  "features_2_title": "Safety signals",
+  "features_2_desc": "Heuristics from traffic, elevation, road types, and crowdsourced flags.",
+  "features_3_title": "Parking & charging",
+  "features_3_desc": "Find legal scooter parking and e-bike charging spots nearby.",
+  "features_4_title": "Weather & wind aware",
+  "features_4_desc": "Adjust routes when headwinds or rain make a difference.",
+  "features_5_title": "Provider-friendly",
+  "features_5_desc": "Works alongside Lime, Tier, Bird, Dott, and your own bike.",
+  "features_6_title": "Privacy-first",
+  "features_6_desc": "No ads. Minimal data. Opt-in sharing only.",
+
+
+
+  
+  "pricing_title": "Lovable Plan — Free forever",
+  "pricing_subtitle": "Try Rooty with the core features riders love. No credit card required.",
+
+  "pricing_lovable_name": "Lovable",
+  "pricing_free_badge": "Free",
+  "pricing_lovable_desc": "The essentials to fall in love with Rooty.",
+  "pricing_free_label": "Free",
+  "pricing_free_forever": "forever",
+
+  "pricing_feat_lane": "Bike/scooter-friendly routing",
+  "pricing_feat_safer": "Safer route options",
+  "pricing_feat_parking": "Parking & charging spots",
+  "pricing_feat_privacy": "No ads, privacy-first",
+
+  "pricing_cta_start_free": "Start free",
+
+  "pricing_pro_name": "Pro",
+  "pricing_coming_soon": "coming soon",
+  "pricing_pro_desc": "For daily commuters who want more control.",
+  "pricing_per_month": "/mo",
+  "pricing_includes_lovable": "Everything in Lovable",
+  "pricing_feat_weather": "Weather & wind-aware routing",
+  "pricing_feat_elevation": "Elevation (hills) preferences",
+  "pricing_feat_favorites": "Favorite routes & neighborhoods",
+
+  "pricing_cta_join_waitlist": "Join waitlist",
+
+  "pricing_teams_name": "City / Teams",
+  "pricing_teams_desc": "For partners and mobility programs.",
+  "pricing_custom_label": "Custom",
+  "pricing_feat_dashboards": "Coverage dashboards",
+  "pricing_feat_api": "API & integrations",
+  "pricing_feat_priority": "Priority city rollout",
+  "pricing_cta_contact": "Contact us",
+
+
+
+  "how_title": "How it works",
+  "how_step1_title": "Pick destination",
+  "how_step1_desc": "Tell Rooty where you’re going.",
+  "how_step2_title": "Choose vibe",
+  "how_step2_desc": "Safest, flattest, or fastest route.",
+  "how_step3_title": "Ride with confidence",
+  "how_step3_desc": "Turn-by-turn guidance built for micromobility.",
+
+  "cta_title": "Get early access",
+  "cta_subtitle": "Join the waitlist and be first to try Rooty in your city.",
+  "cta_placeholder_email": "you@email.com",
+  "cta_submit": "Join waitlist",
+  "cta_submitting": "Submitting...",
+  "cta_success": "You're in! 🎉",
+  "cta_invalid_email": "Please enter a valid email address.",
+  "cta_error": "Something went wrong. Try again.",
+  "cta_policy": "No spam. Unsubscribe anytime.",
+
+  "footer_privacy": "Privacy",
+  "footer_terms": "Terms",
+  "footer_contact": "Contact"
+}

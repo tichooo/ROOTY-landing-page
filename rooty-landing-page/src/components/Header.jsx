@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Button from "./ui/Button";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 6);
@@ -25,17 +27,17 @@ export default function Header() {
           <img
             src="/logo192.png"
             alt="Rooty"
-            className="h-10 w-auto sm:h-12 transition-transform duration-300 hover:scale-105"
+            className="h-14 w-auto sm:h-16 transition-transform duration-300 hover:scale-105"
           />
         </a>
 
         {/* Nav desktop (centered) */}
         <nav className="hidden md:flex items-center gap-8 text-base absolute left-1/2 transform -translate-x-1/2">
           {[
-            { label: "Features", href: "#features" },
-            { label: "Pricing", href: "#pricing" },
-            { label: "How it works", href: "#how" },
-            { label: "Early access", href: "#cta" },
+            { label: t("nav_features"), href: "#features" },
+            { label: t("nav_pricing"), href: "#pricing" },
+            { label: t("nav_how"), href: "#how" },
+            { label: t("nav_early"), href: "#cta" },
           ].map(({ label, href }) => (
             <a
               key={href}
@@ -47,7 +49,6 @@ export default function Header() {
           ))}
         </nav>
 
-
         {/* CTA desktop (right) */}
         <div className="ml-auto hidden md:block">
           <Button
@@ -56,7 +57,7 @@ export default function Header() {
             variant="accent"
             size="md"
           >
-            Join waitlist
+            {t("cta_button")}
           </Button>
         </div>
 
@@ -77,9 +78,15 @@ export default function Header() {
       {open && (
         <div className="md:hidden border-t bg-white/95">
           <div className="mx-auto max-w-6xl px-4 py-3 flex flex-col gap-3 text-sm">
-            <a onClick={() => setOpen(false)} href="#features" className="py-2">Features</a>
-            <a onClick={() => setOpen(false)} href="#pricing" className="py-2">Pricing</a>
-            <a onClick={() => setOpen(false)} href="#how" className="py-2">How it works</a>
+            <a onClick={() => setOpen(false)} href="#features" className="py-2">
+              {t("nav_features")}
+            </a>
+            <a onClick={() => setOpen(false)} href="#pricing" className="py-2">
+              {t("nav_pricing")}
+            </a>
+            <a onClick={() => setOpen(false)} href="#how" className="py-2">
+              {t("nav_how")}
+            </a>
             <Button
               onClick={() => setOpen(false)}
               href="#cta"
@@ -87,7 +94,7 @@ export default function Header() {
               variant="accent"
               size="sm"
             >
-              Join waitlist
+              {t("cta_button")}
             </Button>
           </div>
         </div>

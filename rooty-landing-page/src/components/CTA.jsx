@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Loading from "./Loading";
 import Button from "./ui/Button";
-// Si tu utilises les animations (facultatif, supprime la ligne suivante si tu ne l'as pas)
+import { useTranslation } from "react-i18next";
 import FadeIn from "./motion/FadeIn";
 
 export default function CTA() {
-  const [status, setStatus] = useState("idle");   // idle | loading | success | error
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [email, setEmail] = useState("");
+  const { t } = useTranslation();
 
   function isValidEmail(value) {
     return typeof value === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -26,7 +27,7 @@ export default function CTA() {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json?.ok) {
         setStatus("success");
-        // Optionnel: vider le champ si tu veux
+        // Optionnel : vider le champ
         // setEmail("");
       } else {
         setStatus("error");
@@ -38,39 +39,31 @@ export default function CTA() {
 
   const ButtonLabel =
     status === "loading"
-      ? "Submitting..."
+      ? t("cta_submitting")
       : status === "success"
-      ? "You're in! 🎉"
-      : "Join waitlist";
+      ? t("cta_success")
+      : t("cta_submit");
 
   return (
     <section id="cta" className="py-20">
       <div className="mx-auto max-w-2xl px-4 text-center">
-        {/* Enlève FadeIn si tu ne veux pas d'animation / si tu n'as pas le composant */}
-        <FadeIn mode="onScroll" repeat duration={0.5}>
-          <h2 className="text-3xl sm:text-4xl font-bold">Get early access</h2>
+        <FadeIn mode="onScroll" repeat duration={0.3}>
+          <h2 className="text-3xl sm:text-4xl font-bold">{t("cta_title")}</h2>
         </FadeIn>
 
-
         <FadeIn mode="onScroll" delay={0.05}>
-          <p className="mt-3 text-gray-600">
-            Join the waitlist and be first to try Rooty in your city.
-          </p>
+          <p className="mt-3 text-gray-600">{t("cta_subtitle")}</p>
         </FadeIn>
 
         <FadeIn mode="onScroll" repeat delay={0.1}>
-          <form
-            onSubmit={onSubmit}
-            className="mt-8 flex flex-col sm:flex-row gap-3"
-            aria-live="polite"
-          >
+          <form onSubmit={onSubmit} className="mt-8 flex flex-col sm:flex-row gap-3" aria-live="polite">
             <input
               required
               name="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
+              placeholder={t("cta_placeholder_email")}
               className="w-full rounded-xl border px-4 py-3"
               aria-invalid={email.length > 0 && !isValidEmail(email)}
               aria-describedby="email-help"
@@ -89,20 +82,18 @@ export default function CTA() {
           </form>
         </FadeIn>
 
-        {/* Helper pour email invalide */}
         {!isValidEmail(email) && email.length > 0 && (
           <p id="email-help" className="mt-2 text-sm text-red-600">
-            Please enter a valid email address.
+            {t("cta_invalid_email")}
           </p>
         )}
 
-        {/* Message d'erreur serveur */}
         {status === "error" && (
-          <p className="mt-2 text-red-600">Something went wrong. Try again.</p>
+          <p className="mt-2 text-red-600">{t("cta_error")}</p>
         )}
 
         <FadeIn mode="onScroll" delay={0.15}>
-          <p className="mt-3 text-xs text-gray-500">No spam. Unsubscribe anytime.</p>
+          <p className="mt-3 text-xs text-gray-500">{t("cta_policy")}</p>
         </FadeIn>
       </div>
     </section>
