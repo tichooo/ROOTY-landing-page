@@ -1,15 +1,24 @@
 {
-  "nav_features": "Features",
-  "nav_pricing": "Pricing",
-  "nav_how": "How it works",
-  "nav_early": "Early access",
+  "nav_features_main": "Features",
+  "nav_premium": "Premium",
+  "nav_faq": "FAQ",
 
-  
-  "hero_title": "Safer, smoother routes for bikes & scooters",
-  "hero_subtitle": "Rooty finds micromobility-friendly paths, avoids dangerous roads, and shows bike lanes, parking and charging spots.",
+
+  "hero_title": "Ride safer, \nfaster and smarter.",
+  "hero_subtitle": "Discover the app designed for urban cyclists.",
   "hero_cta": "Get early access",
   "hero_features": "See features",
   "hero_preview": "App preview (add screenshot/video later)",
+  "hero_phone_alt": "Rooty app preview on smartphone",
+  "hero_download_label": "download",
+  "hero_platforms_caption": "Available on Windows, Linux, Android, iOS and more!",
+
+  
+  "intro_headline": "Ever dreamt of a Waze for bikes?",
+  "intro_welcome": "Welcome to Rooty.",
+  "intro_para1": "Whether you want the safest route or to connect with your community, Rooty makes every ride simple, pleasant and secure.",
+  "intro_para2": "Combining smart navigation with community insights, Rooty transforms micromobility in Paris—more connected and stress-free.",
+
 
 
   "cta_button": "Join waitlist",
@@ -29,8 +38,6 @@
   "features_5_desc": "Works alongside Lime, Tier, Bird, Dott, and your own bike.",
   "features_6_title": "Privacy-first",
   "features_6_desc": "No ads. Minimal data. Opt-in sharing only.",
-
-
 
   
   "pricing_title": "Lovable Plan — Free forever",
@@ -69,14 +76,46 @@
   "pricing_cta_contact": "Contact us",
 
 
+  "hiw_1_title": "Smart, micromobility-friendly routing",
+  "hiw_1_intro": "Rooty plans optimized trips for bikes and scooters, prioritizing:",
+  "hiw_1_b1_strong": "Safety:",
+  "hiw_1_b1_text": " protected bike lanes and low-traffic roads.",
+  "hiw_1_b2_strong": "Comfort:",
+  "hiw_1_b2_text": " surface quality (cobblestones, potholes, smooth pavement).",
+  "hiw_1_b3_strong": "Peace of mind:",
+  "hiw_1_b3_text": " night lighting, slopes and elevation suited to your ride.",
+  "hiw_1_alt": "Rooty routing screen",
 
-  "how_title": "How it works",
-  "how_step1_title": "Pick destination",
-  "how_step1_desc": "Tell Rooty where you’re going.",
-  "how_step2_title": "Choose vibe",
-  "how_step2_desc": "Safest, flattest, or fastest route.",
-  "how_step3_title": "Ride with confidence",
-  "how_step3_desc": "Turn-by-turn guidance built for micromobility.",
+  "hiw_2_title": "Intelligent guidance",
+  "hiw_2_intro": "Navigation designed for micromobility — simple and precise:",
+  "hiw_2_b1_strong": "Discreet audio notifications",
+  "hiw_2_b1_text": " to keep your focus on the road.",
+  "hiw_2_b2_strong": "Automatic rerouting",
+  "hiw_2_b2_text": " with real-time adjustments from community reports.",
+  "hiw_2_b3_strong": "Clear, legible UI,",
+  "hiw_2_b3_text": " even in motion.",
+  "hiw_2_alt": "Rooty guidance screen",
+
+  "hiw_3_title": "Power of the community",
+  "hiw_3_intro": "Rooty is more than GPS — it’s a community of engaged riders.",
+  "hiw_3_b1_strong": "Personal profiles",
+  "hiw_3_b1_text": " to follow friends and colleagues.",
+  "hiw_3_b2_strong": "Trip sharing",
+  "hiw_3_b2_text": " and community challenges.",
+  "hiw_3_b3_strong": "Tips & best practices",
+  "hiw_3_b3_text": " shared across members.",
+  "hiw_3_alt": "Rooty community screen",
+
+  "hiw_4_title": "Your data, your progress",
+  "hiw_4_intro": "Track your performance, savings and environmental impact:",
+  "hiw_4_b1_strong": "Personalized stats:",
+  "hiw_4_b1_text": " distance, duration, average speed.",
+  "hiw_4_b2_strong": "Calories burnt & CO₂ saved",
+  "hiw_4_b2_text": " on every ride.",
+  "hiw_4_b3_strong": "Weekly comparisons",
+  "hiw_4_b3_text": " to follow your progress.",
+  "hiw_4_alt": "Rooty stats screen",
+
 
   "cta_title": "Get early access",
   "cta_subtitle": "Join the waitlist and be first to try Rooty in your city.",

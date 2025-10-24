@@ -5,15 +5,16 @@ import Pricing from "./components/Pricing";
 import HowItWorks from "./components/HowItWorks";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import Intro from "./components/Intro";
 
 export default function App() {
   return (
     <>
       <Header />
       <Hero />
-      <Features />
-      <Pricing />
+      <Intro />
       <HowItWorks />
+      <Features />
       <CTA />
       <Footer />
     </>

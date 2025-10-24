@@ -1,15 +1,24 @@
 {
-  "nav_features": "Fonctionnalités",
-  "nav_pricing": "Tarifs",
-  "nav_how": "Comment ça marche",
-  "nav_early": "Accès anticipé",
+  "nav_features_main": "Fonctionnalités",
+  "nav_premium": "Premium",
+  "nav_faq": "FAQ",
 
-  
-  "hero_title": "Des trajets plus sûrs et plus fluides pour vélos et trottinettes",
-  "hero_subtitle": "Rooty trouve des itinéraires adaptés à la micromobilité, évite les routes dangereuses et affiche les pistes cyclables, parkings et bornes de recharge.",
+
+  "hero_title": "Roulez plus sereinement, plus vite et plus malin.",
+  "hero_subtitle": "Découvrez l’application conçue pour les cyclistes à Paris.",
   "hero_cta": "Accès anticipé",
   "hero_features": "Voir les fonctionnalités",
-  "hero_preview": "Aperçu de l'application (capture/vidéo à venir)",
+  "hero_preview": "Aperçu de l’application (capture/vidéo à venir)",
+  "hero_phone_alt": "Aperçu de l’app Rooty sur smartphone",
+  "hero_download_label": "téléchargement",
+  "hero_platforms_caption": "Disponible sur Windows, Linux, Android, iOS et plus !",
+
+  
+  "intro_headline": "Vous avez déjà rêvé d’un Waze pour vélos ?",
+  "intro_welcome": "Bienvenue sur Rooty.",
+  "intro_para1": "Qu’il s’agisse de trouver la route la plus sûre ou de connecter avec sa communauté, Rooty veille à ce que chaque trajet soit simple, agréable et sécurisé.",
+  "intro_para2": "Entre navigation intelligente et entraide communautaire, Rooty transforme l’expérience utilisateur de la micromobilité à Paris, la rendant plus connectée et sans stress.",
+
 
 
   "cta_button": "Rejoindre la liste d’attente",
@@ -29,7 +38,6 @@
   "features_5_desc": "Fonctionne avec Lime, Tier, Bird, Dott ou ton propre vélo.",
   "features_6_title": "Respect de la vie privée",
   "features_6_desc": "Aucune publicité. Données minimales. Partage uniquement sur consentement.",
-
 
   
   "pricing_title": "Offre Lovable — Gratuite pour toujours",
@@ -68,14 +76,45 @@
   "pricing_cta_contact": "Nous contacter",
 
 
+  "hiw_1_title": "Itinéraires intelligents et micromobilité-friendly",
+  "hiw_1_intro": "Rooty calcule des trajets optimisés pour vélos et trottinettes en privilégiant :",
+  "hiw_1_b1_strong": "La sécurité :",
+  "hiw_1_b1_text": " pistes cyclables protégées et routes à faible trafic.",
+  "hiw_1_b2_strong": "Le confort :",
+  "hiw_1_b2_text": " qualité de la chaussée (pavés, trous, revêtements lisses).",
+  "hiw_1_b3_strong": "La sérénité :",
+  "hiw_1_b3_text": " éclairage nocturne, pentes et dénivelés adaptés.",
+  "hiw_1_alt": "Écran d’itinéraires Rooty",
 
-  "how_title": "Comment ça marche",
-  "how_step1_title": "Choisir la destination",
-  "how_step1_desc": "Dis à Rooty où tu vas.",
-  "how_step2_title": "Choisir le style",
-  "how_step2_desc": "Plus sûr, plus plat ou plus rapide.",
-  "how_step3_title": "Rouler serein",
-  "how_step3_desc": "Guidage pensé pour la micromobilité.",
+  "hiw_2_title": "Guidage intelligent",
+  "hiw_2_intro": "Un guidage pensé pour la micromobilité, simple et précis :",
+  "hiw_2_b1_strong": "Notifications sonores discrètes",
+  "hiw_2_b1_text": " pour rester concentré sur la route.",
+  "hiw_2_b2_strong": "Recalcul automatique",
+  "hiw_2_b2_text": " et ajustements en temps réel selon les signalements.",
+  "hiw_2_b3_strong": "Affichage clair et lisible,",
+  "hiw_2_b3_text": " même en mouvement.",
+  "hiw_2_alt": "Écran de guidage Rooty",
+
+  "hiw_3_title": "La force du collectif",
+  "hiw_3_intro": "Rooty, c’est bien plus qu’un GPS : c’est une communauté de riders engagés.",
+  "hiw_3_b1_strong": "Profil personnalisé",
+  "hiw_3_b1_text": " pour suivre ses amis ou collègues.",
+  "hiw_3_b2_strong": "Partage de trajets",
+  "hiw_3_b2_text": " et participation à des défis communautaires.",
+  "hiw_3_b3_strong": "Échange de conseils",
+  "hiw_3_b3_text": " et bonnes pratiques entre membres.",
+  "hiw_3_alt": "Écran communauté Rooty",
+
+  "hiw_4_title": "Vos données, votre progression",
+  "hiw_4_intro": "Suivez vos performances, vos économies et votre impact environnemental :",
+  "hiw_4_b1_strong": "Statistiques personnalisées :",
+  "hiw_4_b1_text": " distance, durée, vitesse moyenne.",
+  "hiw_4_b2_strong": "Calories dépensées et CO₂ économisé",
+  "hiw_4_b2_text": " à chaque trajet.",
+  "hiw_4_b3_strong": "Comparaisons hebdomadaires",
+  "hiw_4_b3_text": " pour suivre votre évolution.",
+  "hiw_4_alt": "Écran statistiques Rooty",
 
   "cta_title": "Accès anticipé",
   "cta_subtitle": "Inscris-toi pour tester Rooty en premier dans ta ville.",
