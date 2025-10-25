@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
 export default function Button({
   children,
   href,
+  to,
   onClick,
   variant = "primary",
   size = "md",
@@ -40,6 +43,14 @@ export default function Button({
   };
 
   const combined = `${base} ${sizes[size]} ${variants[variant]} ${className}`.trim();
+
+  if (to) {
+    return (
+      <Link to={to} className={combined} onClick={onClick} aria-disabled={disabled}>
+        {children}
+      </Link>
+    );
+  }
 
   if (href) {
     return (
