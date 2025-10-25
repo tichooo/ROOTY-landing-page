@@ -116,6 +116,14 @@
   "hiw_4_b3_text": " pour suivre votre évolution.",
   "hiw_4_alt": "Écran statistiques Rooty",
 
+
+  "demo_subtitle": "Roulez sereinement, où que vous soyez.",
+  "demo_caption": "Aperçu de l’expérience Rooty — défilement automatique.",
+  "demo_screen_alt": "Démonstration Rooty écran {{index}}",
+  "demo_go_to_slide": "Aller à la diapositive {{n}}",
+
+
+
   "cta_title": "Accès anticipé",
   "cta_subtitle": "Inscris-toi pour tester Rooty en premier dans ta ville.",
   "cta_placeholder_email": "votre@email.com",

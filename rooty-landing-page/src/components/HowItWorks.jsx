@@ -62,7 +62,7 @@ export default function HowItWorks() {
           { emoji: "🚲", strong: t("hiw_1_b2_strong"), text: t("hiw_1_b2_text") },
           { emoji: "🌙", strong: t("hiw_1_b3_strong"), text: t("hiw_1_b3_text") },
         ]}
-        img="/img/screen-routing.png"
+        img="/img/screen_routing.png"
         alt={t("hiw_1_alt")}
       />
 
@@ -75,7 +75,7 @@ export default function HowItWorks() {
           { emoji: "🧭", strong: t("hiw_2_b2_strong"), text: t("hiw_2_b2_text") },
           { emoji: "🧿", strong: t("hiw_2_b3_strong"), text: t("hiw_2_b3_text") },
         ]}
-        img="/img/screen-guidance.png"
+        img="/img/screen_guidance.png"
         alt={t("hiw_2_alt")}
         reverse
       />
@@ -89,7 +89,7 @@ export default function HowItWorks() {
           { emoji: "🤝", strong: t("hiw_3_b2_strong"), text: t("hiw_3_b2_text") },
           { emoji: "💬", strong: t("hiw_3_b3_strong"), text: t("hiw_3_b3_text") },
         ]}
-        img="/img/screen-community.png"
+        img="/img/screen_community.png"
         alt={t("hiw_3_alt")}
       />
 

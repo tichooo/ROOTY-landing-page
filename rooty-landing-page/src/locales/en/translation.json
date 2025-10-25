@@ -117,6 +117,13 @@
   "hiw_4_alt": "Rooty stats screen",
 
 
+  "demo_subtitle": "Ride with peace of mind, wherever you are.",
+  "demo_caption": "Rooty demo preview — auto-play carousel.",
+  "demo_screen_alt": "Rooty demo screen {{index}}",
+  "demo_go_to_slide": "Go to slide {{n}}",
+
+
+
   "cta_title": "Get early access",
   "cta_subtitle": "Join the waitlist and be first to try Rooty in your city.",
   "cta_placeholder_email": "you@email.com",
