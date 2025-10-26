@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "./motion/FadeIn";
 import { useTranslation } from "react-i18next";
+import PhoneFrame from "../components/ui/PhoneFrame";
 
 export default function DemoShowcase() {
   const { t } = useTranslation();
@@ -46,36 +47,27 @@ export default function DemoShowcase() {
       <div className="mx-auto max-w-6xl px-4 text-center">
         {/* Visual first (smaller phone frame) */}
         <FadeIn mode="onScroll" repeat>
-          <div className="mx-auto relative w-[210px] sm:w-[240px] md:w-[270px] lg:w-[290px]">
-            {/* Viewport */}
-            <div
-              className="relative overflow-hidden rounded-[32px] shadow-[0_30px_40px_rgba(0,0,0,0.22)] ring-1 ring-black/10 bg-black/2 aspect-[9/19.5] touch-pan-y"
-              onTouchStart={onTouchStart}
-              onTouchEnd={onTouchEnd}
-            >
-              <AnimatePresence initial={false} mode="wait">
-                <motion.img
-                  key={index}
-                  src={screens[index]}
-                  alt={t("demo_screen_alt", { index: index + 1 })}
-                  className="absolute inset-0 w-full h-full object-cover select-none"
-                  initial={{ x: "100%" }}
-                  animate={{ x: "0%" }}
-                  exit={{ x: "-100%" }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  draggable={false}
-                />
-              </AnimatePresence>
-            </div>
-
-            {/* Optional realistic bezel over the viewport */}
-            { <img
-              src="/img/phone-frame.png"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 w-full h-full"
-            />}
-          </div>
+          <PhoneFrame
+            width={290}
+            height={580}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            className="mx-auto scale-[0.75] sm:scale-[0.85] md:scale-90 lg:scale-100 origin-top"
+          >
+            <AnimatePresence initial={false} mode="wait">
+              <motion.img
+                key={index}
+                src={screens[index]}
+                alt={t("demo_screen_alt", { index: index + 1 })}
+                className="absolute inset-0 w-full h-full object-contain select-none"
+                initial={{ x: "100%" }}
+                animate={{ x: "0%" }}
+                exit={{ x: "-100%" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                draggable={false}
+              />
+            </AnimatePresence>
+          </PhoneFrame>
         </FadeIn>
 
         {/* Dots */}

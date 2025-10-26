@@ -1,5 +1,6 @@
 import FadeIn from "./motion/FadeIn";
 import { useTranslation } from "react-i18next";
+import PhoneFrame from "./ui/PhoneFrame";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -38,36 +39,18 @@ export default function Hero() {
 
         {/* Image téléphone + cadre */}
         <FadeIn mode="onScroll" repeat delay={0.25}>
-          <div
-            className="relative mt-16 mx-auto w-fit grid place-items-center"
-            style={{
-              width: SCREEN_W + FRAME_EXTRA_W,
-              height: typeof SCREEN_H === "number" ? SCREEN_H + FRAME_EXTRA_H : "auto",
-            }}
-          >
-            {/* Cadre du téléphone */}
-            <img
-              src="/img/phone-frame.png"
-              alt="Phone frame"
-              className="absolute z-20 pointer-events-none select-none"
-              style={{
-                width: SCREEN_W + FRAME_EXTRA_W,
-                height:
-                  typeof SCREEN_H === "number" ? SCREEN_H + FRAME_EXTRA_H : "auto",
-                transform: `translate(${FRAME_SHIFT_X}%, ${FRAME_SHIFT_Y}%)`,
-              }}
-            />
-
-            {/* Écran interne */}
-            <img
-              src="/img/screen_routing.png"
-              alt={t("hero_phone_alt")}
-              className="relative z-10 select-none drop-shadow-[0_40px_45px_rgba(0,0,0,0.25)] rounded-[1.8rem]"
-              style={{
-                width: SCREEN_W,
-                height: SCREEN_H,
-              }}
-            />
+          <div className="mt-16 mx-auto">
+            <PhoneFrame
+              width={300}
+              height={580}
+              className="mx-auto"
+            >
+              <img
+                src="/img/screen_routing.png"
+                alt={t("hero_phone_alt")}
+                className="w-full h-full object-contain"
+              />
+            </PhoneFrame>
           </div>
         </FadeIn>
 
