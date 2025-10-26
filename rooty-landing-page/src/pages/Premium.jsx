@@ -23,69 +23,26 @@ export default function Premium() {
     }
   };
 
-  const comparisons = [
-    {
-      feature: 'Itinéraires cyclables',
-      free: '✓',
-      premium: '✓'
-    },
-    {
-      feature: 'Navigation vocale',
-      free: '✓',
-      premium: '✓'
-    },
-    {
-      feature: 'Points d\'intérêts',
-      free: '✓',
-      premium: '✓'
-    },
-    {
-      feature: 'Itinéraires personnalisés',
-      free: '×',
-      premium: '✓'
-    },
-    {
-      feature: 'Mode hors-ligne',
-      free: '×',
-      premium: '✓'
-    },
-    {
-      feature: 'Navigation par météo',
-      free: '×',
-      premium: '✓'
-    },
-    {
-      feature: 'Routes favorites',
-      free: '×',
-      premium: '✓'
-    },
-    {
-      feature: 'Statistiques avancées',
-      free: '×',
-      premium: '✓'
-    }
-  ];
-
   const features = [
     {
-      title: 'Navigation par météo',
-      description: 'Recevez des itinéraires optimisés en fonction des conditions météorologiques actuelles.',
+      key: 'nav_weather',
       icon: '🌤️'
     },
     {
-      title: 'Mode hors-ligne',
-      description: 'Téléchargez vos cartes pour une utilisation sans connexion internet.',
+      key: 'offline_mode',
       icon: '📱'
     },
     {
-      title: 'Routes favorites',
-      description: 'Enregistrez vos meilleurs itinéraires pour un accès rapide.',
+      key: 'favorite_routes',
       icon: '⭐'
     },
     {
-      title: 'Statistiques avancées',
-      description: 'Suivez votre progression avec des analyses détaillées.',
-      icon: '�'
+      key: 'community_rankings',
+      icon: '🏆'
+    },
+    {
+      key: 'advanced_stats',
+      icon: '📊'
     }
   ];
 
@@ -131,8 +88,8 @@ export default function Premium() {
             <FadeIn>
               <div>
                 <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-gray-900">
-                  Abonne-toi dès maintenant<br />
-                  pour seulement 4,99€/mois
+                  {t('premium_title')}<br />
+                  {t('premium_price')}
                 </h1>
                 <div className="mt-8 mb-12">
                   <Button 
@@ -140,24 +97,24 @@ export default function Premium() {
                     size="lg"
                     onClick={handlePremiumClick}
                   >
-                    DEVENIR PREMIUM
+                    {t('premium_cta')}
                   </Button>
                 </div>
 
                 {/* Comparison Table */}
                 <div className="mt-8 bg-white rounded-xl shadow-lg overflow-hidden">
                   <div className="grid grid-cols-3 text-center py-4 bg-gray-50 font-bold">
-                    <div>Fonctionnalités</div>
-                    <div>Gratuit</div>
-                    <div>Premium</div>
+                    <div>{t('premium_comparison.title')}</div>
+                    <div>{t('premium_comparison.free')}</div>
+                    <div>{t('premium_comparison.premium')}</div>
                   </div>
-                  {comparisons.map((item, i) => (
-                    <div key={i} className="grid grid-cols-3 text-center py-4 border-t">
-                      <div className="text-left px-4">{item.feature}</div>
-                      <div className={item.free === '×' ? 'text-gray-400' : 'text-accent font-bold'}>
-                        {item.free}
+                  {Object.entries(t('premium_comparison.features', { returnObjects: true })).map(([key, value]) => (
+                    <div key={key} className="grid grid-cols-3 text-center py-4 border-t">
+                      <div className="text-left px-4">{value.name}</div>
+                      <div className={!value.included_free ? 'text-gray-400' : 'text-accent font-bold'}>
+                        {value.included_free ? '✓' : '×'}
                       </div>
-                      <div className="text-accent font-bold">{item.premium}</div>
+                      <div className="text-accent font-bold">✓</div>
                     </div>
                   ))}
                 </div>
@@ -235,27 +192,27 @@ export default function Premium() {
       <section id="features" className="py-20 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <FadeIn>
-            <h2 className="text-4xl font-bold text-center mb-12">Plus de détails</h2>
+            <h2 className="text-4xl font-bold text-center mb-12">{t('premium_details')}</h2>
             <div className="space-y-4">
               {features.map(feature => (
-                <div key={feature.title} 
+                <div key={feature.key} 
                   className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <button
                     className="w-full p-6 flex items-center justify-between text-left"
-                    onClick={() => setOpenFeature(openFeature === feature.title ? null : feature.title)}
+                    onClick={() => setOpenFeature(openFeature === feature.key ? null : feature.key)}
                   >
                     <div className="flex items-center gap-4">
                       <span className="text-3xl">{feature.icon}</span>
-                      <h3 className="text-xl font-bold">{feature.title}</h3>
+                      <h3 className="text-xl font-bold">{t(`premium_features.${feature.key}.title`)}</h3>
                     </div>
-                    <span className={`transform transition-transform ${openFeature === feature.title ? 'rotate-180' : ''}`}>
+                    <span className={`transform transition-transform ${openFeature === feature.key ? 'rotate-180' : ''}`}>
                       ▼
                     </span>
                   </button>
                   
                   <AnimatePresence>
-                    {openFeature === feature.title && (
+                    {openFeature === feature.key && (
                       <motion.div
                         initial={{ height: 0 }}
                         animate={{ height: "auto" }}
@@ -264,7 +221,7 @@ export default function Premium() {
                         className="overflow-hidden"
                       >
                         <div className="p-6 pt-0 border-t">
-                          <p className="text-gray-600">{feature.description}</p>
+                          <p className="text-gray-600">{t(`premium_features.${feature.key}.description`)}</p>
                         </div>
                       </motion.div>
                     )}
