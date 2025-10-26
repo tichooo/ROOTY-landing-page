@@ -47,27 +47,29 @@ export default function DemoShowcase() {
       <div className="mx-auto max-w-6xl px-4 text-center">
         {/* Visual first (smaller phone frame) */}
         <FadeIn mode="onScroll" repeat>
-          <PhoneFrame
-            width={290}
-            height={580}
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-            className="mx-auto scale-[0.75] sm:scale-[0.85] md:scale-90 lg:scale-100 origin-top"
-          >
-            <AnimatePresence initial={false} mode="wait">
-              <motion.img
-                key={index}
-                src={screens[index]}
-                alt={t("demo_screen_alt", { index: index + 1 })}
-                className="absolute inset-0 w-full h-full object-contain select-none"
-                initial={{ x: "100%" }}
-                animate={{ x: "0%" }}
-                exit={{ x: "-100%" }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                draggable={false}
-              />
-            </AnimatePresence>
-          </PhoneFrame>
+          <div className="relative max-w-[320px] mx-auto">
+            <PhoneFrame
+              width={320}
+              height={650}
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
+              className="mx-auto scale-[0.85] sm:scale-90 md:scale-95 lg:scale-100 origin-top transform-gpu"
+            >
+              <AnimatePresence initial={false} mode="wait">
+                <motion.img
+                  key={index}
+                  src={screens[index]}
+                  alt={t("demo_screen_alt", { index: index + 1 })}
+                  className="w-full h-full object-cover rounded-[2.25rem] select-none"
+                  initial={{ opacity: 0, x: "100%" }}
+                  animate={{ opacity: 1, x: "0%" }}
+                  exit={{ opacity: 0, x: "-100%" }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  draggable={false}
+                />
+              </AnimatePresence>
+            </PhoneFrame>
+          </div>
         </FadeIn>
 
         {/* Dots */}
