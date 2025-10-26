@@ -46,14 +46,14 @@ export default function Premium() {
     }
   ];
 
-  // Premium app screens - update with your actual premium feature screenshots
+  // Premium app screens showing different features
   const screens = [
-    "/img/screen_routing.png",
-    "/img/screen_guidance.png",
-    "/img/screen_community.png",
-    "/img/demo-2.png",
-    "/img/demo-3.png"
-  ];
+    "/img/screen_routing.png",    // Navigation route screen
+    "/img/screen_guidance.png",   // Turn-by-turn navigation
+    "/img/screen_community.png",  // Community features
+    "/img/demo-2.png",           // Weather navigation
+    "/img/demo-3.png"            // Statistics and tracking
+  ].map(path => process.env.PUBLIC_URL + path); // Ensure correct path resolution
 
   // Autoplay functionality
   useEffect(() => {
@@ -133,7 +133,7 @@ export default function Premium() {
                   {/* Inner bezel with metallic effect */}
                   <div className="absolute inset-[1px] rounded-[2.9rem] bg-gradient-to-br from-gray-600 via-gray-700 to-gray-800">
                     {/* Screen content */}
-                    <div className="absolute inset-[4px] rounded-[2.7rem] overflow-hidden">
+                    <div className="absolute inset-[4px] rounded-[2.7rem] overflow-hidden bg-white">
                       <AnimatePresence initial={false}>
                         <motion.div
                           key={index}
@@ -141,12 +141,16 @@ export default function Premium() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -100 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0"
+                          className="absolute inset-0 flex items-center justify-center"
                         >
                           <img
                             src={screens[index]}
-                            alt={`Premium feature screen ${index + 1}`}
-                            className="w-full h-full object-cover"
+                            alt={t('premium_screen_alt', { index: index + 1 })}
+                            className="w-full h-full object-contain"
+                            onError={(e) => {
+                              console.error('Image failed to load:', screens[index]);
+                              e.target.style.display = 'none';
+                            }}
                           />
                         </motion.div>
                       </AnimatePresence>
