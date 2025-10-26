@@ -1,4 +1,77 @@
 {
+  "premium_title": "Subscribe now",
+  "premium_price": "for only €4.99/month",
+  "premium_cta": "GO PREMIUM",
+  "premium_details": "More details",
+  "premium_screen_alt": "Premium feature screen {{index}}",
+  
+  "premium_features": {
+    "nav_weather": {
+      "title": "Weather navigation",
+      "description": "Optimize your routes based on real-time weather conditions. Our system analyzes wind direction, precipitation, and temperature to suggest the most comfortable routes. Avoid headwinds, find sheltered routes in case of rain, and benefit from weather-adapted suggestions."
+    },
+    "offline_mode": {
+      "title": "Offline mode",
+      "description": "Access your maps and routes even without an internet connection. Download your chosen areas in advance for smooth navigation anywhere. Offline maps include essential data such as elevation, cyclist points of interest, and surface types."
+    },
+    "favorite_routes": {
+      "title": "Favorite routes",
+      "description": "Create your personal route library. Save your favorite trips with personal notes, points of interest, and photos. Organize your routes by category (training, leisure, commute) and discover the best routes from other cyclists in your area."
+    },
+    "community_rankings": {
+      "title": "Community rankings",
+      "description": "Join the ROOTY community challenges! Compare your performance on different segments, participate in monthly competitions, and earn exclusive badges. Create your own segments, track your progress, and challenge other cyclists. Filter rankings by category."
+    },
+    "advanced_stats": {
+      "title": "Advanced statistics",
+      "description": "Dive into detailed performance analysis. Visualize your progress with intuitive graphs: average speed, distance covered, cumulative elevation, effort time by zone. Analyze your monthly trends and receive personalized suggestions to improve your rides."
+    }
+  },
+
+  "premium_comparison": {
+    "title": "Features",
+    "free": "Free",
+    "premium": "Premium",
+    "features": {
+      "bike_routes": {
+        "name": "Bike routes",
+        "included_free": true
+      },
+      "voice_nav": {
+        "name": "Voice navigation",
+        "included_free": true
+      },
+      "poi": {
+        "name": "Points of interest",
+        "included_free": true
+      },
+      "custom_routes": {
+        "name": "Custom routes",
+        "included_free": false
+      },
+      "offline": {
+        "name": "Offline mode",
+        "included_free": false
+      },
+      "weather": {
+        "name": "Weather navigation",
+        "included_free": false
+      },
+      "rankings": {
+        "name": "Community rankings",
+        "included_free": false
+      },
+      "favorites": {
+        "name": "Favorite routes",
+        "included_free": false
+      },
+      "stats": {
+        "name": "Advanced statistics",
+        "included_free": false
+      }
+    }
+  },
+
   "nav_features_main": "Features",
   "nav_premium": "Premium",
   "nav_faq": "FAQ",

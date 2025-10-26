@@ -1,4 +1,77 @@
 {
+  "premium_title": "Abonne-toi dès maintenant",
+  "premium_price": "pour seulement 4,99€/mois",
+  "premium_cta": "DEVENIR PREMIUM",
+  "premium_details": "Plus de détails",
+  "premium_screen_alt": "Fonctionnalité premium écran {{index}}",
+  
+  "premium_features": {
+    "nav_weather": {
+      "title": "Navigation par météo",
+      "description": "Optimisez vos trajets en fonction des conditions météorologiques en temps réel. Notre système analyse la direction du vent, les précipitations et la température pour vous proposer les itinéraires les plus confortables. Évitez les vents de face, trouvez les routes abritées en cas de pluie, et profitez de suggestions adaptées aux conditions climatiques."
+    },
+    "offline_mode": {
+      "title": "Mode hors-ligne",
+      "description": "Accédez à vos cartes et itinéraires même sans connexion internet. Téléchargez à l'avance les zones de votre choix pour une navigation fluide partout. Les cartes hors-ligne incluent les données essentielles comme le dénivelé, les points d'intérêt cyclistes et les types de revêtement."
+    },
+    "favorite_routes": {
+      "title": "Routes favorites",
+      "description": "Créez votre bibliothèque personnelle d'itinéraires. Enregistrez vos trajets préférés avec des notes personnelles, des points d'intérêt et des photos. Organisez vos routes par catégories (entraînement, loisir, commute) et découvrez les meilleurs itinéraires des autres cyclistes dans votre région."
+    },
+    "community_rankings": {
+      "title": "Classements communautaires",
+      "description": "Rejoignez les défis de la communauté ROOTY ! Comparez vos performances sur différents segments, participez à des compétitions mensuelles et gagnez des badges exclusifs. Créez vos propres segments, suivez votre progression et défiez d'autres cyclistes. Filtrez les classements par catégorie."
+    },
+    "advanced_stats": {
+      "title": "Statistiques avancées",
+      "description": "Plongez dans l'analyse détaillée de vos performances. Visualisez vos progrès avec des graphiques intuitifs : vitesse moyenne, distance parcourue, dénivelé cumulé, temps d'effort par zone. Analysez vos tendances mensuelles et recevez des suggestions personnalisées pour améliorer vos trajets."
+    }
+  },
+
+  "premium_comparison": {
+    "title": "Fonctionnalités",
+    "free": "Gratuit",
+    "premium": "Premium",
+    "features": {
+      "bike_routes": {
+        "name": "Itinéraires cyclables",
+        "included_free": true
+      },
+      "voice_nav": {
+        "name": "Navigation vocale",
+        "included_free": true
+      },
+      "poi": {
+        "name": "Points d'intérêts",
+        "included_free": true
+      },
+      "custom_routes": {
+        "name": "Itinéraires personnalisés",
+        "included_free": false
+      },
+      "offline": {
+        "name": "Mode hors-ligne",
+        "included_free": false
+      },
+      "weather": {
+        "name": "Navigation par météo",
+        "included_free": false
+      },
+      "rankings": {
+        "name": "Classements communautaires",
+        "included_free": false
+      },
+      "favorites": {
+        "name": "Routes favorites",
+        "included_free": false
+      },
+      "stats": {
+        "name": "Statistiques avancées",
+        "included_free": false
+      }
+    }
+  },
+
   "nav_features_main": "Fonctionnalités",
   "nav_premium": "Premium",
   "nav_faq": "FAQ",
