@@ -55,6 +55,11 @@ export default function Premium() {
     "/img/demo-3.png"
   ];
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Autoplay functionality
   useEffect(() => {
     if (paused) return;
