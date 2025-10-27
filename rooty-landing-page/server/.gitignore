@@ -1,0 +1,14 @@
+# Environment variables
+.env
+
+# Data files
+users.json
+verification_tokens.json
+subscribers.csv
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
