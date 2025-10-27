@@ -77,6 +77,9 @@
   "nav_faq": "FAQ",
   "nav_login": "Login",
   "nav_register": "Register",
+  "nav_profile_account": "My account",
+  "nav_profile_premium": "Premium",
+  "nav_profile_logout": "Log out",
 
   "faq_title": "Got Questions?",
   "faq_subtitle": "Ask us anything about Rooty. We're here to help!",

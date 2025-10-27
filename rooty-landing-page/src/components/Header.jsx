@@ -3,13 +3,16 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./ui/Button";
 import i18n from "../i18n";
+import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
+  const { user, logout } = useAuth();
 
   const languages = [
     { code: "fr", name: "Français" },
@@ -100,10 +103,49 @@ export default function Header() {
             )}
           </div>
 
-          {/* Bouton connexion */}
-          <Button to="/auth" variant="secondary">
-            {t("nav_login", "Connexion")}
-          </Button>
+          {/* Bouton connexion ou profil */}
+          {user ? (
+            <div className="relative">
+              <button
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                onClick={() => setProfileMenuOpen(!profileMenuOpen)}
+                aria-label="Profile menu"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" fill="#6B7280"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V21H4V20Z" fill="#6B7280"/>
+                </svg>
+              </button>
+              {profileMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 rounded-lg bg-white shadow-lg border py-2 z-50">
+                  <div className="px-4 py-2 border-b">
+                    <p className="text-sm font-medium text-gray-900">{user.email}</p>
+                    <p className="text-xs text-gray-500">{t("nav_profile_account", "Mon compte")}</p>
+                  </div>
+                  <Link
+                    to="/premium"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                    onClick={() => setProfileMenuOpen(false)}
+                  >
+                    {t("nav_profile_premium", "Premium")}
+                  </Link>
+                  <button
+                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                    onClick={() => {
+                      logout();
+                      setProfileMenuOpen(false);
+                    }}
+                  >
+                    {t("nav_profile_logout", "Se déconnecter")}
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Button to="/auth" variant="secondary">
+              {t("nav_login", "Connexion")}
+            </Button>
+          )}
         </div>
 
         {/* Bouton menu mobile */}
@@ -163,16 +205,51 @@ export default function Header() {
               </select>
             </div>
 
-            {/* Bouton connexion mobile */}
+            {/* Bouton connexion ou profil mobile */}
             <div className="mt-2">
-              <Button
-                to="/auth"
-                variant="secondary"
-                className="w-full justify-center"
-                onClick={() => setOpen(false)}
-              >
-                {t("nav_login", "Connexion")}
-              </Button>
+              {user ? (
+                <div className="space-y-2">
+                  <div className="px-4 py-2 bg-gray-50 rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="8" r="4" fill="#6B7280"/>
+                          <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V21H4V20Z" fill="#6B7280"/>
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate">{user.email}</p>
+                        <p className="text-xs text-gray-500">{t("nav_profile_account", "Mon compte")}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    to="/premium"
+                    className="block w-full text-center py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    {t("nav_profile_premium", "Premium")}
+                  </Link>
+                  <button
+                    className="w-full py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                    onClick={() => {
+                      logout();
+                      setOpen(false);
+                    }}
+                  >
+                    {t("nav_profile_logout", "Se déconnecter")}
+                  </button>
+                </div>
+              ) : (
+                <Button
+                  to="/auth"
+                  variant="secondary"
+                  className="w-full justify-center"
+                  onClick={() => setOpen(false)}
+                >
+                  {t("nav_login", "Connexion")}
+                </Button>
+              )}
             </div>
           </div>
         </div>

@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/ui/Button';
+import { useAuth } from '../context/AuthContext';
 
 export default function Auth() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -65,9 +69,10 @@ export default function Auth() {
 
         if (data.ok) {
           setMessage({ type: 'success', text: t('auth_login_success', 'Login successful!') });
-          // Store token and redirect
+          // Store token and user data
           localStorage.setItem('authToken', data.token);
-          setTimeout(() => window.location.href = '/premium', 1500);
+          login(data.user);
+          setTimeout(() => navigate('/premium'), 1500);
         } else {
           setMessage({ type: 'error', text: data.error || t('auth_login_error', 'Invalid credentials') });
         }
