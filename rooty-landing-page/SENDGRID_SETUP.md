@@ -9,6 +9,9 @@ SendGrid est nécessaire car Render (et la plupart des services cloud gratuits) 
 1. Allez sur https://signup.sendgrid.com/
 2. Créez un compte gratuit (100 emails/jour gratuitement)
 3. Vérifiez votre email
+
+### recovery code G67XKMZUHESPFGQZ1XPYWUB7
+
 4. Remplissez le questionnaire initial (sélectionnez "Web App" comme use case)
 
 ### 2. Créer une API Key
