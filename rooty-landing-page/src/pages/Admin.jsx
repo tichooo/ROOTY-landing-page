@@ -21,7 +21,7 @@ export default function Admin() {
   const handleLogin = (e) => {
     e.preventDefault();
     // Simple password check (you should change this!)
-    const ADMIN_PASSWORD = 'rooty2025'; // ⚠️ CHANGEZ CE MOT DE PASSE !
+    const ADMIN_PASSWORD = '!8RG&Lbef$nemXRz'; // ⚠️ CHANGEZ CE MOT DE PASSE !
     
     if (password === ADMIN_PASSWORD) {
       localStorage.setItem('admin_auth', 'authenticated');
