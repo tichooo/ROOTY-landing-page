@@ -1,27 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-
-const SUBSCRIBERS_FILE = path.join('/tmp', 'subscribers.json');
-
-function readJSON(filePath, defaultValue = []) {
-  try {
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error(`Error reading ${filePath}:`, error);
-  }
-  return defaultValue;
-}
-
-function writeJSON(filePath, data) {
-  try {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-  } catch (error) {
-    console.error(`Error writing ${filePath}:`, error);
-  }
-}
+const { kv } = require('@vercel/kv');
 
 function isValidEmail(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -50,21 +27,21 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Read existing subscribers
-    const subscribers = readJSON(SUBSCRIBERS_FILE, []);
-
     // Check if already subscribed
-    if (subscribers.find(s => s.email === email)) {
+    const alreadySubscribed = await kv.sismember('subscribers:all', email);
+    
+    if (alreadySubscribed) {
       return res.status(400).json({ ok: false, error: 'Email already subscribed' });
     }
 
-    // Add new subscriber
-    subscribers.push({
+    // Add subscriber
+    const subscriber = {
       email,
       subscribedAt: new Date().toISOString()
-    });
+    };
 
-    writeJSON(SUBSCRIBERS_FILE, subscribers);
+    await kv.set(`subscriber:${email}`, subscriber);
+    await kv.sadd('subscribers:all', email);
 
     return res.status(200).json({
       ok: true,

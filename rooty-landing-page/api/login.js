@@ -1,20 +1,5 @@
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcrypt');
-
-const USERS_FILE = path.join('/tmp', 'users.json');
-
-function readJSON(filePath, defaultValue = []) {
-  try {
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error(`Error reading ${filePath}:`, error);
-  }
-  return defaultValue;
-}
+const { kv } = require('@vercel/kv');
 
 function isValidEmail(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -48,11 +33,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Read users
-    const users = readJSON(USERS_FILE, []);
-
-    // Find user
-    const user = users.find(u => u.email === email);
+    // Get user from KV
+    const user = await kv.get(`user:${email}`);
 
     if (!user) {
       return res.status(400).json({ ok: false, error: 'Email not found. Please register first.' });

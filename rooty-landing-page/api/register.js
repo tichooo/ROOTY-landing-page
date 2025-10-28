@@ -1,30 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcrypt');
 const { v4: uuidv4 } = require('uuid');
-
-// Helper to read/write JSON files (will be replaced by a real DB later)
-const USERS_FILE = path.join('/tmp', 'users.json');
-
-function readJSON(filePath, defaultValue = []) {
-  try {
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error(`Error reading ${filePath}:`, error);
-  }
-  return defaultValue;
-}
-
-function writeJSON(filePath, data) {
-  try {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-  } catch (error) {
-    console.error(`Error writing ${filePath}:`, error);
-  }
-}
+const { kv } = require('@vercel/kv');
 
 function isValidEmail(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -58,11 +34,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Read existing users
-    const users = readJSON(USERS_FILE, []);
-
     // Check if user already exists
-    if (users.find(u => u.email === email)) {
+    const existingUser = await kv.get(`user:${email}`);
+    if (existingUser) {
       return res.status(400).json({ ok: false, error: 'Email already registered' });
     }
 
@@ -74,12 +48,15 @@ export default async function handler(req, res) {
       id: uuidv4(),
       email,
       password: hashedPassword,
-      verified: true, // Auto-verified, no email needed
+      verified: true,
       createdAt: new Date().toISOString()
     };
 
-    users.push(newUser);
-    writeJSON(USERS_FILE, users);
+    // Save user in KV
+    await kv.set(`user:${email}`, newUser);
+    
+    // Also save to a list for easy retrieval
+    await kv.sadd('users:all', email);
 
     // Return success with user data
     return res.status(200).json({
