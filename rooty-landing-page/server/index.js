@@ -19,15 +19,26 @@ const VERIFICATION_TOKENS_PATH = path.join(__dirname, 'verification_tokens.json'
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configure email transporter (using Gmail as example)
-// For production, use environment variables for credentials
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER || 'your-email@gmail.com', // Replace with your email
-    pass: process.env.EMAIL_PASS || 'your-app-password' // Use App Password for Gmail
-  }
-});
+// Configure email transporter
+// Use SendGrid for production (Render), Gmail for local development
+const transporter = nodemailer.createTransport(
+  process.env.SENDGRID_API_KEY
+    ? {
+        host: 'smtp.sendgrid.net',
+        port: 587,
+        auth: {
+          user: 'apikey',
+          pass: process.env.SENDGRID_API_KEY
+        }
+      }
+    : {
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER || 'your-email@gmail.com',
+          pass: process.env.EMAIL_PASS || 'your-app-password'
+        }
+      }
+);
 
 // Helper functions
 function isValidEmail(email) {
@@ -58,16 +69,22 @@ function writeJSON(filePath, data) {
 
 // Send verification email
 async function sendVerificationEmail(email, token) {
-  const verificationUrl = `http://localhost:3000/verify-email?token=${token}`;
+  const baseUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+  const verificationUrl = `${baseUrl}/verify-email?token=${token}`;
   
   console.log('📧 Tentative d\'envoi d\'email à:', email);
   console.log('🔑 Configuration email:', {
     user: process.env.EMAIL_USER,
-    hasPassword: !!process.env.EMAIL_PASS
+    hasPassword: !!process.env.EMAIL_PASS,
+    hasSendGrid: !!process.env.SENDGRID_API_KEY
   });
   
+  const fromEmail = process.env.SENDGRID_API_KEY 
+    ? 'my.rooty.app@gmail.com' // SendGrid verified sender (update after verification)
+    : process.env.EMAIL_USER || 'your-email@gmail.com';
+  
   const mailOptions = {
-    from: process.env.EMAIL_USER || 'your-email@gmail.com',
+    from: fromEmail,
     to: email,
     subject: 'Verify Your Rooty Account',
     html: `
