@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Button from '../components/ui/Button';
+import API_BASE_URL from '../config/api';
 
 export default function VerifyEmail() {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ export default function VerifyEmail() {
     }
 
     // Verify the email
-    fetch(`http://localhost:4000/api/auth/verify-email?token=${token}`)
+    fetch(`${API_BASE_URL}/api/auth/verify-email?token=${token}`)
       .then(response => response.json())
       .then(data => {
         if (data.ok) {

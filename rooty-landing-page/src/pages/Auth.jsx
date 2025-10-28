@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import { useAuth } from '../context/AuthContext';
+import API_BASE_URL from '../config/api';
 
 export default function Auth() {
   const { t } = useTranslation();
@@ -59,7 +60,7 @@ export default function Auth() {
     try {
       if (isLogin) {
         // Login logic
-        const response = await fetch('http://localhost:4000/api/auth/login', {
+        const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
@@ -78,7 +79,7 @@ export default function Auth() {
         }
       } else {
         // Register logic
-        const response = await fetch('http://localhost:4000/api/auth/register', {
+        const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),

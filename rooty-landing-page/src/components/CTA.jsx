@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import Button from "./ui/Button";
 import { useTranslation } from "react-i18next";
 import FadeIn from "./motion/FadeIn";
+import API_BASE_URL from "../config/api";
 
 export default function CTA() {
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
@@ -19,7 +20,7 @@ export default function CTA() {
 
     setStatus("loading");
     try {
-      const res = await fetch("/api/subscribe", {
+      const res = await fetch(`${API_BASE_URL}/api/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

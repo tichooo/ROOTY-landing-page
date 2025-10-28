@@ -9,7 +9,45 @@ Backend server for email collection, user authentication, and email verification
 - User login with password hashing
 - Email verification system
 
-## Setup
+## 🚀 Deployment on Render.com
+
+### Step 1: Push your code to GitHub
+
+Make sure your server code is in the `server/` directory of your repository.
+
+### Step 2: Create a Render account
+
+1. Go to https://render.com
+2. Sign up with GitHub
+
+### Step 3: Create a new Web Service
+
+1. Click "New +" → "Web Service"
+2. Connect your GitHub repository
+3. Configure:
+   - **Name**: rooty-backend
+   - **Root Directory**: server
+   - **Environment**: Node
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+
+### Step 4: Add Environment Variables
+
+In the Render dashboard, add these environment variables:
+- `EMAIL_USER`: your-email@gmail.com
+- `EMAIL_PASS`: your-app-password
+- `NODE_ENV`: production
+
+### Step 5: Deploy
+
+Click "Create Web Service". Render will deploy your backend and give you a URL like:
+`https://rooty-backend.onrender.com`
+
+### Step 6: Update Frontend
+
+Update your frontend (on Vercel) to use the Render backend URL instead of localhost:4000.
+
+## Local Setup
 
 1. Install dependencies:
 ```bash
@@ -33,34 +71,7 @@ If using Gmail:
 2. Generate an App Password: https://myaccount.google.com/apppasswords
 3. Use the App Password as EMAIL_PASS (not your regular password)
 
-### Alternative Email Services
-
-You can also use other email services by modifying the transporter configuration in `index.js`:
-
-**For SendGrid:**
-```javascript
-const transporter = nodemailer.createTransport({
-  host: 'smtp.sendgrid.net',
-  port: 587,
-  auth: {
-    user: 'apikey',
-    pass: process.env.SENDGRID_API_KEY
-  }
-});
-```
-
-**For Outlook:**
-```javascript
-const transporter = nodemailer.createTransport({
-  service: 'outlook',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
-```
-
-## Running
+## Running Locally
 
 Start the server:
 ```bash
@@ -102,22 +113,3 @@ Verify email address
 - Always use environment variables for sensitive data in production
 - Consider using a proper database (MongoDB, PostgreSQL) for production
 
-This small Express server accepts POST /api/subscribe with JSON { email } and appends it to `subscribers.csv` (CSV compatible with Excel).
-
-Run locally:
-
-```powershell
-cd server
-npm install
-npm start
-```
-
-By default the server runs on port 4000. To make the Create React App dev server forward API requests to it during development, add this to the root `package.json` of the React app:
-
-```json
-"proxy": "http://localhost:4000"
-```
-
-Or run both servers and send requests directly to http://localhost:4000/api/subscribe from the frontend.
-
-Security note: this is a minimal example; in production you'll want validation, rate-limiting, and persistence that isn't a plain CSV file.
