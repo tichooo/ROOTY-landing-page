@@ -11,7 +11,6 @@ import Premium from "./pages/Premium";
 import Auth from "./pages/Auth";
 import FAQ from "./pages/FAQ";
 import ComingSoon from "./pages/ComingSoon";
-import VerifyEmail from "./pages/VerifyEmail";
 import { AuthProvider } from "./context/AuthContext";
 
 function Home() {
@@ -38,7 +37,6 @@ export default function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
-          <Route path="/verify-email" element={<VerifyEmail />} />
         </Routes>
         <Footer />
       </AuthProvider>

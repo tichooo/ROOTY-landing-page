@@ -115,7 +115,7 @@
   "auth_loading": "Chargement...",
   "auth_login_success": "Connexion réussie !",
   "auth_login_error": "Identifiants invalides",
-  "auth_register_success": "Compte créé ! Veuillez vérifier votre email pour valider votre compte.",
+  "auth_register_success": "Compte créé avec succès ! Vous pouvez maintenant vous connecter.",
   "auth_register_error": "Échec de l'inscription",
   "auth_server_error": "Impossible de se connecter au serveur. Veuillez réessayer plus tard.",
 

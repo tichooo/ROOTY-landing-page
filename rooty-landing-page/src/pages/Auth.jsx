@@ -90,10 +90,13 @@ export default function Auth() {
         if (data.ok) {
           setMessage({ 
             type: 'success', 
-            text: t('auth_register_success', 'Account created! Please check your email to verify your account.') 
+            text: t('auth_register_success', 'Account created successfully! You can now log in.') 
           });
-          setEmail('');
-          setPassword('');
+          // Auto-switch to login after 2 seconds
+          setTimeout(() => {
+            setIsLogin(true);
+            setMessage({ type: '', text: '' });
+          }, 2000);
         } else {
           setMessage({ type: 'error', text: data.error || t('auth_register_error', 'Registration failed') });
         }

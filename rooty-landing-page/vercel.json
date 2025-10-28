@@ -14,10 +14,6 @@
       "destination": "/api/login"
     },
     {
-      "source": "/api/auth/verify-email",
-      "destination": "/api/verify-email"
-    },
-    {
       "source": "/api/subscribe",
       "destination": "/api/subscribe"
     }

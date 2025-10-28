@@ -65,12 +65,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ ok: false, error: 'Incorrect password' });
     }
 
-    // Check if email is verified
-    if (!user.verified) {
-      return res.status(400).json({ ok: false, error: 'Please verify your email before logging in' });
-    }
-
-    // Success
+    // Success - No need to check verification anymore
     return res.status(200).json({
       ok: true,
       user: {

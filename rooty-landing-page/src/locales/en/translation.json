@@ -115,7 +115,7 @@
   "auth_loading": "Loading...",
   "auth_login_success": "Login successful!",
   "auth_login_error": "Invalid credentials",
-  "auth_register_success": "Account created! Please check your email to verify your account.",
+  "auth_register_success": "Account created successfully! You can now log in.",
   "auth_register_error": "Registration failed",
   "auth_server_error": "Unable to connect to server. Please try again later.",
 
